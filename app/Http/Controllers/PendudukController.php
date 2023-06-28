@@ -17,6 +17,14 @@ class PendudukController extends Controller
         return view('admin.penduduk.index', compact('data'));
     }
 
+    public function search()
+    {
+        $keyword = request()->get('search');
+        $data = Penduduk::where('nik', 'LIKE', '%' . $keyword . '%')->orWhere('nama', 'LIKE', '%' . $keyword . '%')->paginate(15);
+        //dd($keyword, $data);
+        request()->flash();
+        return view('admin.penduduk.index', compact('data'));
+    }
     public function create()
     {
         $agama = Agama::get();

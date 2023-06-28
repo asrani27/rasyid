@@ -89,6 +89,7 @@ Route::group(['middleware' => ['auth', 'role:superadmin']], function () {
     Route::get('superadmin/desa/delete/{id}', [DesaController::class, 'delete']);
 
     Route::get('superadmin/penduduk', [PendudukController::class, 'index']);
+    Route::get('superadmin/penduduk/search', [PendudukController::class, 'search']);
     Route::get('superadmin/penduduk/create', [PendudukController::class, 'create']);
     Route::post('superadmin/penduduk/create', [PendudukController::class, 'store']);
     Route::get('superadmin/penduduk/edit/{id}', [PendudukController::class, 'edit']);

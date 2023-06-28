@@ -11,7 +11,16 @@
             <i class="ion ion-clipboard"></i><h3 class="box-title">Data Penduduk</h3>
 
             <div class="box-tools">
-              <a href="/superadmin/penduduk/create" class="btn btn-flat btn-sm btn-default bg-purple"><i class="fa fa-plus"></i> Tambah Data</a>
+              <form class="form" method="get" action="/superadmin/penduduk/search">
+                <div class="input-group input-group-sm hidden-xs" style="width: 350px;">
+                <input type="text" name="search" class="form-control pull-right" placeholder="Cari NIK/Nama" value="{{old('search')}}">
+    
+                <div class="input-group-btn">
+                    <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                    <a href="/superadmin/penduduk/create" class="btn btn-flat btn-sm btn-default bg-purple"><i class="fa fa-plus"></i> Tambah Data</a>
+                </div>
+                </div>
+            </form>
             </div>
           </div>
           <!-- /.box-header -->
